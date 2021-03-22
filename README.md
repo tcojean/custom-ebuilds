@@ -6,4 +6,5 @@ This repo contains a few ebuilds I often use. There no is guarantee that they wi
 Currently this contains:
 + [qubes-pass](https://github.com/Rudd-O/qubes-pass)
 + [xst](https://github.com/gnotclub/xst)
++ [cmakels](https://github.com/havogt/cmakels)
 
