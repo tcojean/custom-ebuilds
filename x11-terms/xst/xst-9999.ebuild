@@ -21,6 +21,10 @@ virtual/pkgconfig
 x11-base/xorg-proto
 "
 
+src_prepare() {
+	sed -i 's;/\*\(.*"Hack Nerd Font.*\), \*/;\1;' config.def.h
+	default
+}
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}"/usr install
