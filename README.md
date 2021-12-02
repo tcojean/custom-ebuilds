@@ -6,5 +6,6 @@ This repo contains a few ebuilds I often use. There no is guarantee that they wi
 Currently this contains:
 + [qubes-pass](https://github.com/Rudd-O/qubes-pass)
 + [xst](https://github.com/gnotclub/xst)
-+ [cmakels](https://github.com/havogt/cmakels)
++ [cmake-language-server](https://github.com/regen100/cmake-language-server)
++ [pygls](https://github.com/openlawlibrary/pygls) dependency of cmake-language-server
 
