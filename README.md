@@ -6,6 +6,7 @@ This repo contains a few ebuilds I often use. There no is guarantee that they wi
 Currently this contains:
 + [qubes-pass](https://github.com/Rudd-O/qubes-pass)
 + [xst](https://github.com/gnotclub/xst)
-+ [cmake-language-server](https://github.com/regen100/cmake-language-server)
-+ [pygls](https://github.com/openlawlibrary/pygls) dependency of cmake-language-server
++ [interception-tools](https://gitlab.com/interception/linux/tools)
+    + [dual-function-keys](https://gitlab.com/interception/linux/plugins/dual-function-keys)
+    + [caps2esc](https://gitlab.com/interception/linux/plugins/caps2esc)
 
