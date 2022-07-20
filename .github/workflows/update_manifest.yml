@@ -1,0 +1,22 @@
+name: Update manifest
+
+on: push
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    container:
+      image: madhacking/gentoo-testrunner:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Update manifest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GENTOO_REPO_TOKEN }}
+        run: |
+          repoman manifest
+          git config user.name 'Terry Cojean'
+          git config user.email 'terry.cojean@kit.edu'
+          git commit -am "[bot] Update Manifest"
+          git pull --rebase
+          git push
