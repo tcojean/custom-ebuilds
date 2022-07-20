@@ -8,9 +8,9 @@
 	<upstream>
 		<remote-id type="github">Rudd-O/qubes-pass</remote-id>
 	</upstream>
-  <use>
-    <flag name="client">Add the client binary</flag>
-    <flag name="dom0">Add the dom0 policies</flag>
-    <flag name="service">Add the service scripts</flag>
-  </use>
+	<use>
+		<flag name="client">Add the client binary</flag>
+		<flag name="dom0">Add the dom0 policies</flag>
+		<flag name="service">Add the service scripts</flag>
+	</use>
 </pkgmetadata>
