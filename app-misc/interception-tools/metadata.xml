@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>Z5483Y@gmail.com</email>
-		<name>Khue Nguyen</name>
+		<email>terry.cojean@posteo.net</email>
+		<name>Terry Cojean</name>
 	</maintainer>
 	<upstream>
 		<remote-id type="gitlab">interception/linux/tools</remote-id>

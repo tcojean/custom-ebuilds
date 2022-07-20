@@ -6,6 +6,6 @@
 		<name>Terry Cojean</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="gitlab">interception/linux/plugins/dual-function-keys</remote-id>
+		<remote-id type="github">gnotclub/xst</remote-id>
 	</upstream>
 </pkgmetadata>

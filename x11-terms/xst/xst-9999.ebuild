@@ -1,3 +1,6 @@
+# Copyright 1999-2022 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
 EAPI=7
 inherit eutils git-r3 multilib savedconfig toolchain-funcs
 
@@ -28,10 +31,8 @@ src_prepare() {
 
 src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}"/usr install
-
 	make_desktop_entry ${PN} xst utilities-terminal 'System;TerminalEmulator;' ''
 }
-
 
 pkg_postinst() {
 	if ! [[ "${REPLACING_VERSIONS}" ]]; then

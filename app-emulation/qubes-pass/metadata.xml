@@ -6,6 +6,11 @@
 		<name>Terry Cojean</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="gitlab">interception/linux/plugins/dual-function-keys</remote-id>
+		<remote-id type="github">Rudd-O/qubes-pass</remote-id>
 	</upstream>
+  <use>
+    <flag name="client">Add the client binary</flag>
+    <flag name="dom0">Add the dom0 policies</flag>
+    <flag name="service">Add the service scripts</flag>
+  </use>
 </pkgmetadata>
