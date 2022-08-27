@@ -45,6 +45,7 @@ src_compile() {
 
 src_install() {
 	systemd_dounit "${FILESDIR}"/udevmon.service
+	newinitd "${FILESDIR}/udevmon.initd" udevmon
 	newbin intercept uintercept
 	dobin mux uinput udevmon
 }
