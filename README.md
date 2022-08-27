@@ -9,4 +9,4 @@ Currently this contains:
 + [interception-tools](https://gitlab.com/interception/linux/tools)
     + [dual-function-keys](https://gitlab.com/interception/linux/plugins/dual-function-keys)
     + [caps2esc](https://gitlab.com/interception/linux/plugins/caps2esc)
-
++ [owncloud-client](https://github.com/owncloud/client) last version

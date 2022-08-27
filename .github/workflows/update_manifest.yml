@@ -18,6 +18,9 @@ jobs:
           git config user.name 'Terry Cojean'
           git config user.email 'terry.cojean@kit.edu'
           git add .
-          git commit -am "[bot] Update Manifest"
-          git pull --rebase
-          git push
+          git_status="$(git status --porcelain --untracked-files=all)"
+          if [[ ! -z "${git_status}" ]]; then
+            git commit -am "[bot] Update Manifest"
+            git pull --rebase
+            git push
+          fi
