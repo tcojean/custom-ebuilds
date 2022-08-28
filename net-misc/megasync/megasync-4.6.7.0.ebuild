@@ -11,12 +11,12 @@ if [[ -z ${PV%%*9999} ]]; then
 	EGIT_SUBMODULES=( '*' )
 	SRC_URI=
 else
-	inherit git-r3
-	EGIT_REPO_URI="https://github.com/meganz/${MY_PN}.git"
-	EGIT_BRANCH="v${PV}_Linux"
-	EGIT_SUBMODULES=( '*' )
-	SRC_URI=
+	SRC_URI="
+		https://github.com/meganz/${MY_PN}/archive/refs/tags/v${PV}_Linux.tar.gz
+		-> ${P}.tar.gz
+	"
 	KEYWORDS="~amd64 ~x86"
+	S="${WORKDIR}/${MY_PN}-${PV}_Linux"
 fi
 CMAKE_USE_DIR="${S}/src/MEGAShellExtDolphin"
 CMAKE_IN_SOURCE_BUILD=y
@@ -31,7 +31,7 @@ SLOT="0"
 IUSE="dolphin nautilus thunar"
 
 RDEPEND="
-	>=net-misc/meganz-sdk-4.1.0:=[libuv,qt,sodium(+),sqlite]
+	=net-misc/meganz-sdk-3.12.3_p2133:=[libuv,qt,sqlite]
 	dev-qt/qtsvg:5
 	dev-qt/qtx11extras:5
 	dev-qt/qtdbus:5
@@ -55,6 +55,9 @@ src_prepare() {
 	sed \
 		-e "/include(/ s:mega/bindings/qt/:${EPREFIX}/usr/share/&:" \
 		-i src/MEGASync/MEGASync.pro
+	sed \
+		-e "s:LOCAL_FINGERPRINT_:LOCAL_FILESYSTEM_:" \
+		-i src/MEGASync/MegaApplication.cpp
 	cmake_src_prepare
 	mv -f src/MEGAShellExtDolphin/CMakeLists{_kde5,}.txt
 	rm -f src/MEGAShellExtDolphin/megasync-plugin.moc

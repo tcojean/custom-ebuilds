@@ -10,3 +10,5 @@ Currently this contains:
     + [dual-function-keys](https://gitlab.com/interception/linux/plugins/dual-function-keys)
     + [caps2esc](https://gitlab.com/interception/linux/plugins/caps2esc)
 + [owncloud-client](https://github.com/owncloud/client) last version
++ [MEGAsync](https://github.com/meganz/MEGAsync) 
+	+ [MEGA SDK](https://github.com/meganz/sdk) 

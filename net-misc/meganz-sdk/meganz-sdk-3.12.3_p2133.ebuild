@@ -8,12 +8,21 @@ if [[ -z ${PV%%*9999} ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/${PN%-*}/${PN#*-}.git"
 else
-	SRC_URI="
-		https://github.com/${PN%-*}/${PN#*-}/archive/refs/tags/v${PV}.tar.gz
-		-> ${P}.tar.gz
-	"
+	MY_PV="1ef93bb2b84f8beb8d0692c0c8e13c49dad643b7"
+	if [[ ${PV} == *"_p"* ]]; then
+		SRC_URI="
+			https://github.com/${PN%-*}/${PN#*-}/archive/${MY_PV}.tar.gz
+			-> ${P}.tar.gz
+		"
+		S="${WORKDIR}/${PN#*-}-${MY_PV}"
+	else
+		SRC_URI="
+			https://github.com/${PN%-*}/${PN#*-}/archive/refs/tags/v${PV}.tar.gz
+			-> ${P}.tar.gz
+		"
+		S="${WORKDIR}/${PN#*-}-${PV}"
+	fi
 	KEYWORDS="~amd64 ~x86"
-	S="${WORKDIR}/sdk-${MY_PV#v}"
 fi
 
 DESCRIPTION="MEGA C++ SDK"
@@ -31,7 +40,7 @@ REQUIRED_USE="
 RESTRICT+=" test"
 
 RDEPEND="
-	dev-libs/crypto++:=
+	dev-libs/crypto++
 	sys-libs/zlib
 	dev-libs/libpcre:3[cxx]
 	dev-libs/openssl:0
