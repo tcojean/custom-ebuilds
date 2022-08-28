@@ -15,6 +15,7 @@ else
 	EGIT_REPO_URI="https://github.com/meganz/${MY_PN}.git"
 	EGIT_BRANCH="v${PV}_Linux"
 	EGIT_SUBMODULES=( '*' )
+	SRC_URI=
 	KEYWORDS="~amd64 ~x86"
 fi
 CMAKE_USE_DIR="${S}/src/MEGAShellExtDolphin"
@@ -30,7 +31,7 @@ SLOT="0"
 IUSE="dolphin nautilus thunar"
 
 RDEPEND="
-	>=net-misc/meganz-sdk-3.9.16:=[libuv,qt,sodium(+),sqlite]
+	>=net-misc/meganz-sdk-4.1.0:=[libuv,qt,sodium(+),sqlite]
 	dev-qt/qtsvg:5
 	dev-qt/qtx11extras:5
 	dev-qt/qtdbus:5
