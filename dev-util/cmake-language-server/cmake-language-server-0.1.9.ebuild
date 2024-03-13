@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=pdm
+DISTUTILS_USE_PEP517=pdm-backend
 DISTUTILS_SINGLE_IMPL=1
 PYTHON_COMPAT=( python3_{10..12} )
 inherit distutils-r1
@@ -41,3 +41,5 @@ BDEPEND="
 		')
 	)
 "
+
+export PDM_BUILD_SCM_VERSION=${PV}
