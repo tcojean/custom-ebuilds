@@ -1,0 +1,31 @@
+diff --git a/dfk.c b/dfk.c
+index cb1b6b4..96d5dd6 100644
+--- a/dfk.c
++++ b/dfk.c
+@@ -27,7 +27,7 @@ write_event(const struct input_event *event) {
+ }
+ 
+ void
+-syn_pause() {
++syn_pause(void) {
+     static const struct input_event syn = {
+         .type = EV_SYN,
+         .code = SYN_REPORT,
+@@ -170,7 +170,7 @@ handle_release(Mapping *m, struct input_event *input) {
+ }
+ 
+ void
+-consume_pressed() {
++consume_pressed(void) {
+     for (Mapping *m = cfg.m; m; m = m->n) {
+         if(m->hold_start == AFTER_RELEASE)
+             continue;
+@@ -203,7 +203,7 @@ consume_pressed() {
+ }
+ 
+ void
+-loop() {
++loop(void) {
+     struct input_event input;
+     Mapping *m;
+ 

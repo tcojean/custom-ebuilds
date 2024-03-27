@@ -20,6 +20,7 @@ RDEPEND="
 "
 
 src_prepare() {
+        local PATCHES=( "${FILESDIR}/1.5.0-void-prototype.patch" )
 	default
 }
 
