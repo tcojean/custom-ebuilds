@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -22,11 +22,11 @@ DEPEND="
 "
 BDEPEND="
 	${DEPEND}
-	>=sys-devel/gcc-12.1.0[d]
+	sys-devel/gcc:14[d]
 "
+SRC_URI="https://codeload.github.com/abraunegg/onedrive/tar.gz/v${PV} -> ${P}.tar.gz"
 #SRC_URI="https://codeload.github.com/abraunegg/onedrive/tar.gz/v${PV} -> ${P}.tar.gz
 #	https://raw.githubusercontent.com/joecool1029/joecool-overlay/2fc728ea6d0aaf1a89bbeabde1db9b0edd01b894/net-misc/onedrive/files/${P}-gdc.patch"
-SRC_URI="https://codeload.github.com/abraunegg/onedrive/tar.gz/v${PV} -> ${P}.tar.gz"
 
 IUSE="debug libnotify"
 
