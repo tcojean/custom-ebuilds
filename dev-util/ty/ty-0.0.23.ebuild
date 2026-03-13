@@ -546,22 +546,6 @@ DEPEND="
 
 QA_FLAGS_IGNORED="usr/bin/.*"
 
-src_prepare() {
-	default
-
-	# Experimental cruft cleaner. These crates are not used by the ruff binary,
-	# and when they are removed in the git repo, the lockfile is regenerated
-	# and gets quite a bit smaller. Hence pycargoebuild also produces much
-	# smaller CRATES= variables. Less for the user to download, fewer distfiles
-	# to mirror.
-	pushd crates >/dev/null || die
-	rm -r ruff{,_{benchmark,dev,server,workspace}} ruff_python_*_integration_tests ty_completion_eval *_wasm || die
-	popd > /dev/null || die
-
-	# tests that hang in the ebuild environment
-	rm crates/ruff_annotate_snippets/tests/examples.rs || die
-}
-
 src_unpack() {
 	# The upstream source is a git submodule, and their source tarball has
 	# no leading directory.
