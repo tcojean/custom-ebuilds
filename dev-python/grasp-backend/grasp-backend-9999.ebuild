@@ -6,17 +6,18 @@ EAPI=8
 DISTUTILS_USE_PEP517=hatchling
 PYTHON_COMPAT=( python3_{9..14} )
 
-inherit distutils-r1 pypi
+inherit distutils-r1 git-r3
 
 DESCRIPTION="Backend for the Grasp browser extension. Grasp adds a button/keybinding to capture current page title and url, possibly selected text, additional comments or tags and adds it into your Org Mode file"
 HOMEPAGE="
 	https://github.com/karlicoss/grasp/
 	https://pypi.org/project/grasp-backend/
 "
+EGIT_REPO_URI="https://github.com/karlicoss/grasp.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64"
+KEYWORDS="~amd64"
 IUSE="test"
 
 RESTRICT="!test? ( test )"
